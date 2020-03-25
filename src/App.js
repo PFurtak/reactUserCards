@@ -4,6 +4,24 @@ import Users from './components/users/Users';
 import './App.css';
 
 class App extends Component {
+  state = {
+    users: 'testing'
+  };
+
+  async componentDidMount() {
+    try {
+      const res = await fetch('https://randomuser.me/api/?results=1');
+      const data = await res.json();
+      this.setState({
+        users: data.value
+      });
+    } catch (error) {
+      this.setState({
+        users: error.message
+      });
+    }
+  }
+
   render() {
     return (
       <div className='App'>
