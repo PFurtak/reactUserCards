@@ -3,9 +3,10 @@ import UserItem from './UserItem';
 
 export class Users extends Component {
   render() {
+    console.log('this is props: ', this.props);
     return (
       <div style={userStyle}>
-        {this.props.users.map(user => (
+        {this.props.users.results.map(user => (
           <UserItem key={user.id} user={user} />
         ))}
       </div>

@@ -5,8 +5,8 @@ import './App.css';
 
 class App extends Component {
   state = {
-    users: [],
-    loading: true
+    loading: true,
+    users: []
   };
 
   async componentDidMount() {
@@ -16,9 +16,9 @@ class App extends Component {
       const res = await fetch('https://randomuser.me/api/?results=1');
       const data = await res.json();
       console.log('This is data: ', data);
-      console.log('This is datavalue', data.results[0]);
+      console.log('This is datavalue', data.results);
       this.setState({
-        users: data,
+        users: data.results,
         loading: false
       });
     } catch (error) {
@@ -29,7 +29,6 @@ class App extends Component {
   }
 
   render() {
-    console.log('this is state: ', this.state);
     return (
       <div className='App'>
         <Navbar title='User Cards' icon='fab fa-github' />
