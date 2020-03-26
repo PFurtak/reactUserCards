@@ -13,10 +13,8 @@ class App extends Component {
     try {
       this.setState({ loading: true });
 
-      const res = await fetch('https://randomuser.me/api/?results=3');
+      const res = await fetch('https://randomuser.me/api/?results=15');
       const data = await res.json();
-      console.log('This is data: ', data);
-      console.log('This is datavalue', data.results);
       this.setState({
         users: data.results,
         loading: false

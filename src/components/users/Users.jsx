@@ -3,7 +3,6 @@ import UserItem from './UserItem';
 
 export class Users extends Component {
   render() {
-    console.log('this is props: ', this.props);
     return (
       <div style={userStyle}>
         {this.props.users.map(user => (
