@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Nav from './components/layout/Nav';
 import Users from './components/users/Users';
+import TitlePage from './components/layout/TitlePage';
+import Ftr from './components/layout/Ftr';
 import 'bulma/css/bulma.css';
 
 class App extends Component {
@@ -30,9 +32,13 @@ class App extends Component {
     return (
       <div className='App'>
         <Nav title='User Cards' icon='fab fa-github' />
+        <TitlePage />
+        <br />
         <div class='container'>
           <Users loading={this.state.loading} users={this.state.users} />
         </div>
+        <br />
+        <Ftr />
       </div>
     );
   }

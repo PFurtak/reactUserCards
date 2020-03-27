@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import {
   Card,
   CardImage,
+  Container,
   CardContent,
   Media,
   MediaLeft,

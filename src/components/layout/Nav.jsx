@@ -51,6 +51,7 @@ const Nav = ({ icon, title }) => {
             <Field isGrouped>
               <Control>
                 <Button
+                  isColor='black'
                   id='twitter'
                   data-social-network='Twitter'
                   data-social-action='tweet'
