@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Navbar from './components/layout/Navbar';
+import Nav from './components/layout/Nav';
 import Users from './components/users/Users';
 import 'bulma/css/bulma.css';
 
@@ -29,7 +29,7 @@ class App extends Component {
   render() {
     return (
       <div className='App'>
-        <Navbar title='User Cards' icon='fab fa-github' />
+        <Nav title='User Cards' icon='fab fa-github' />
         <div class='container'>
           <Users loading={this.state.loading} users={this.state.users} />
         </div>

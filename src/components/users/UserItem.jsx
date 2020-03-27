@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {
   Card,
-  CardHeader,
   CardImage,
   CardContent,
   Media,
@@ -14,10 +13,11 @@ import {
   Image
 } from 'bloomer';
 
-const UserItem = ({ user: { phone, email, location, name, picture } }) => {
+const UserItem = ({
+  user: { phone, email, location, name, picture, registered }
+}) => {
   return (
     <Card>
-      <CardHeader></CardHeader>
       <CardImage>
         <Image
           isRatio='4:3'
@@ -40,13 +40,15 @@ const UserItem = ({ user: { phone, email, location, name, picture } }) => {
             </Subtitle>
           </MediaContent>
           <h3>
-            {location.city} {location.country}
+            {location.city}, {location.country}
           </h3>
         </Media>
         <Content>
           {email}
           <br />
-          {phone}
+          Phone: {phone}
+          <br />
+          Member since: {registered.date}
         </Content>
       </CardContent>
     </Card>
